@@ -3,22 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Pertamaku</title>
+    <title>RAN Classic - Private Server</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            color: #333;
-            margin-top: 100px;
-        }
-        h1 {
-            color: #0070f3;
+        /* Desain Dasar */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        
+        /* Navigasi (Menu Atas) */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: rgba(15, 23, 42, 0.9); position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        nav .logo { font-size: 24px; font-weight: bold; color: #facc15; text-transform: uppercase; letter-spacing: 2px; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a { color: #f8fafc; text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        nav ul li a:hover { color: #facc15; }
+
+        /* Bagian Utama (Hero Banner) */
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover; padding: 0 20px; }
+        header h1 { font-size: 4rem; text-transform: uppercase; color: #facc15; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
+        header p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; color: #cbd5e1; }
+        
+        /* Tombol Aksi */
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 15px 30px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 5px; text-transform: uppercase; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+        .btn-primary { background-color: #facc15; color: #0f172a; box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(250, 204, 21, 0.6); }
+        .btn-secondary { background-color: transparent; color: #f8fafc; border: 2px solid #f8fafc; }
+        .btn-secondary:hover { background-color: #f8fafc; color: #0f172a; transform: translateY(-3px); }
+
+        /* Informasi Server (Kotak Statistik) */
+        .server-info { display: flex; justify-content: center; gap: 40px; padding: 60px 20px; background-color: #1e293b; flex-wrap: wrap; text-align: center;}
+        .info-card { background-color: #334155; padding: 30px; border-radius: 10px; width: 200px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border-top: 4px solid #facc15; transition: transform 0.3s; }
+        .info-card:hover { transform: translateY(-10px); }
+        .info-card h3 { color: #facc15; font-size: 2.5rem; margin-bottom: 5px; }
+        .info-card p { font-size: 1rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;}
+
+        /* Footer */
+        footer { text-align: center; padding: 25px; background-color: #0f172a; border-top: 1px solid #334155; color: #94a3b8; font-size: 0.9rem; }
+
+        /* Pengaturan untuk Layar HP */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 15px; }
+            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            header h1 { font-size: 2.5rem; margin-top: 50px; }
+            .btn-group { flex-direction: column; width: 100%; }
         }
     </style>
 </head>
 <body>
-    <h1>Halo, Dunia! 👋</h1>
-    <p>Ini adalah website pertama saya yang di-deploy menggunakan Vercel.</p>
+
+    <nav>
+        <div class="logo">RAN Classic</div>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Daftar</a></li>
+            <li><a href="#">Unduh</a></li>
+            <li><a href="#">Peringkat</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Kembali Bernostalgia</h1>
+        <p>Bergabunglah dengan ribuan pemain lainnya di server Classic terbaik. Nikmati pengalaman bermain tanpa lag dan event seru setiap minggunya!</p>
+        <div class="btn-group">
+            <a href="#" class="btn btn-primary">Unduh Game</a>
+            <a href="#" class="btn btn-secondary">Daftar Sekarang</a>
+        </div>
+    </header>
+
+    <section class="server-info">
+        <div class="info-card">
+            <h3>x500</h3>
+            <p>EXP Rate</p>
+        </div>
+        <div class="info-card">
+            <h3>x100</h3>
+            <p>Drop Rate</p>
+        </div>
+        <div class="info-card">
+            <h3>250</h3>
+            <p>Max Level</p>
+        </div>
+        <div class="info-card">
+            <h3>Aktif</h3>
+            <p>Status Server</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RAN Classic Private Server. Dibuat dengan bangga melalui Vercel.</p>
+    </footer>
+
 </body>
 </html>
